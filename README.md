@@ -11,5 +11,5 @@
 
 2. Run steamlit app
    ```
-   streamlit run Dashboard.py
+   streamlit run navigasi.py
    ```
