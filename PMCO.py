@@ -31,22 +31,25 @@ date_range = st.sidebar.date_input(
     min_value=min_date,
     max_value=max_date
 )
+search_clicked = st.button("Cari", type="primary")
 
+if search_clicked:
 
-# === Filter Berdasarkan Rentang Tanggal ===
-if len(date_range) == 2:
-    start_date, end_date = date_range
-    filtered_df = df[(df['date'] >= pd.to_datetime(start_date)) &
-                     (df['date'] <= pd.to_datetime(end_date))]
-else:
-    filtered_df = df.copy()
+    # === Filter Berdasarkan Rentang Tanggal ===
+    if len(date_range) == 2:
+        start_date, end_date = date_range
+        filtered_df = df[(df['date'] >= pd.to_datetime(start_date)) &
+                         (df['date'] <= pd.to_datetime(end_date))]
+    else:
+        filtered_df = df.copy()
 
-st.write(f"📅 Menampilkan data dari **{start_date}** hingga **{end_date}**")
+    st.write(f"📅 Menampilkan data dari **{start_date}** hingga **{end_date}**")
 
-if filtered_df.empty:
-    st.warning("⚠️ Tidak ada data dalam rentang tanggal tersebut.")
-else:
-    st.write("Grafik PM10")
-    st.line_chart(filtered_df, x="date", y=["PM10"])
-    st.write("Grafik CO")
-    st.line_chart(filtered_df, x="date", y=["CO"])
+    if filtered_df.empty:
+        st.warning("⚠️ Tidak ada data dalam rentang tanggal tersebut.")
+    else:
+        st.write("Grafik PM10")
+        st.line_chart(filtered_df, x="date", y=["PM10"])
+
+        st.write("Grafik CO")
+        st.line_chart(filtered_df, x="date", y=["CO"])
