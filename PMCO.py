@@ -19,13 +19,13 @@ df.columns = df.columns.str.strip()
 df['date'] = pd.to_datetime(df['date'], errors='coerce')
 
 # === Sidebar Filter ===
-st.sidebar.header("🔍 Filter Data")
+st.header("🔍 Filter Data")
 
 # Pilih rentang tanggal
 min_date = df['date'].min()
 max_date = df['date'].max()
 
-date_range = st.sidebar.date_input(
+date_range = st.date_input(
     "Pilih rentang tanggal:",
     value=(min_date, max_date),
     min_value=min_date,
@@ -53,3 +53,4 @@ if search_clicked:
 
         st.write("Grafik CO")
         st.line_chart(filtered_df, x="date", y=["CO"])
+
