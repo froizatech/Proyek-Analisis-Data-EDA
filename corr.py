@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 import streamlit as st
 import datetime
-from babel.numbers import format_currency
+
 
 df = pd.read_csv("dingling_data.csv")
 
@@ -78,4 +78,5 @@ else:
     # === Tampilkan Tabel Korelasi ===
     st.subheader("📊 Tabel Korelasi")
     st.dataframe(corr.style.background_gradient(cmap="coolwarm").format("{:.2f}"))
+
 
