@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 import streamlit as st
 import datetime
-from babel.numbers import format_currency
+
 
 df = pd.read_csv("dingling_data.csv")
 
@@ -53,4 +53,5 @@ if search_clicked:
 
         st.write("Grafik CO")
         st.line_chart(filtered_df, x="date", y=["CO"])
+
 
