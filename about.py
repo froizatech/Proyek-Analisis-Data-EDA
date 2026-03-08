@@ -31,8 +31,10 @@ st.markdown("""
 - **Pandas** – data processing
 - **Matplotlib** – data visualization
 - **Streamlit** – web dashboard
+- **Seaborn** – data visualization
+- **Numpy** – data processing
+- **datetime** – date data
 """)
-
 
 st.subheader("Author")
 
@@ -41,4 +43,5 @@ Created by **Fardhan Roiza (F5)**
 
 This project was developed as part of a data visualization and dashboard portfolio using Python.
 """)
+
 
