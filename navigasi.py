@@ -11,7 +11,9 @@ from babel.numbers import format_currency
 home = st.Page("home.py", title="Home")
 pm_co = st.Page("PMCO.py", title="PM10 dan CO")
 corr = st.Page("corr.py", title="Korelasi")
+about = st.Page("about.py", title="About")
 
 # Create the navigation bar at the top
-pg = st.navigation([home, pm_co, corr], position="top")
+pg = st.navigation([home, pm_co, corr, about], position="top")
+
 pg.run()
